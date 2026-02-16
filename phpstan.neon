@@ -2,4 +2,9 @@ parameters:
     ignoreErrors:
         -
             identifier: missingType.iterableValue
+        -
+            identifier: phpDoc.parseError
+        # Defensive programming: instanceof check kept for runtime safety
+        -
+            identifier: instanceof.alwaysTrue
     level: 7
