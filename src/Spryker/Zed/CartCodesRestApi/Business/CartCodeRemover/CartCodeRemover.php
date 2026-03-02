@@ -27,10 +27,6 @@ class CartCodeRemover implements CartCodeRemoverInterface
      */
     protected $cartsRestApiFacade;
 
-    /**
-     * @param \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartCodeFacadeInterface $cartCodeFacade
-     * @param \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartsRestApiFacadeInterface $cartsRestApiFacade
-     */
     public function __construct(
         CartCodesRestApiToCartCodeFacadeInterface $cartCodeFacade,
         CartCodesRestApiToCartsRestApiFacadeInterface $cartsRestApiFacade
@@ -39,11 +35,6 @@ class CartCodeRemover implements CartCodeRemoverInterface
         $this->cartsRestApiFacade = $cartsRestApiFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         $quoteTransfer = $cartCodeRequestTransfer->getQuote();
@@ -67,11 +58,6 @@ class CartCodeRemover implements CartCodeRemoverInterface
         return $this->cartCodeFacade->removeCartCode($cartCodeRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCodeFromQuote(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         $quoteTransfer = $cartCodeRequestTransfer->getQuote();
@@ -113,11 +99,6 @@ class CartCodeRemover implements CartCodeRemoverInterface
         return false;
     }
 
-    /**
-     * @param string $errorIdentifier
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     protected function createCartCodeOperationResultTransferWithErrorMessageTransfer(string $errorIdentifier): CartCodeResponseTransfer
     {
         return (new CartCodeResponseTransfer())->addMessage(

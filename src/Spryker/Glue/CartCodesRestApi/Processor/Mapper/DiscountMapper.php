@@ -25,12 +25,6 @@ class DiscountMapper implements DiscountMapperInterface
         $this->discountMapperPlugins = $discountMapperPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DiscountTransfer $discountTransfer
-     * @param \Generated\Shared\Transfer\RestDiscountsAttributesTransfer $restDiscountsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestDiscountsAttributesTransfer
-     */
     public function mapDiscountDataToRestDiscountsAttributesTransfer(
         DiscountTransfer $discountTransfer,
         RestDiscountsAttributesTransfer $restDiscountsAttributesTransfer

@@ -27,11 +27,6 @@ class CartCodesRestApiDependencyProvider extends AbstractBundleDependencyProvide
      */
     public const FACADE_CARTS_REST_API = 'FACADE_CARTS_REST_API';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -41,11 +36,6 @@ class CartCodesRestApiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartCodeFacade(Container $container): Container
     {
         $container->set(static::FACADE_CART_CODE, function (Container $container) {
@@ -55,11 +45,6 @@ class CartCodesRestApiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartRestApiFacade(Container $container): Container
     {
         $container->set(static::FACADE_CARTS_REST_API, function (Container $container) {

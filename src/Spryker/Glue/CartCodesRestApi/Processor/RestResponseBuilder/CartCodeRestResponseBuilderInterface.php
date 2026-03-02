@@ -13,23 +13,11 @@ use Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface;
 
 interface CartCodeRestResponseBuilderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeResponseTransfer $cartCodeResponseTransfer
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createCartRestResponse(
         CartCodeResponseTransfer $cartCodeResponseTransfer,
         RestRequestInterface $restRequest
     ): RestResponseInterface;
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeResponseTransfer $cartCodeResponseTransfer
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createGuestCartRestResponse(
         CartCodeResponseTransfer $cartCodeResponseTransfer,
         RestRequestInterface $restRequest

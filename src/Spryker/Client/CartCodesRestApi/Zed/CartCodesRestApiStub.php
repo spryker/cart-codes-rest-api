@@ -18,9 +18,6 @@ class CartCodesRestApiStub implements CartCodesRestApiStubInterface
      */
     protected $zedStubClient;
 
-    /**
-     * @param \Spryker\Client\CartCodesRestApi\Dependency\Client\CartCodesRestApiToZedRequestClientInterface $zedStubClient
-     */
     public function __construct(CartCodesRestApiToZedRequestClientInterface $zedStubClient)
     {
         $this->zedStubClient = $zedStubClient;

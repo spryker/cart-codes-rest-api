@@ -16,31 +16,16 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function addCartCodeAction(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         return $this->getFacade()->addCartCode($cartCodeRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCodeAction(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         return $this->getFacade()->removeCartCode($cartCodeRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCodeFromQuoteAction(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         return $this->getFacade()->removeCartCodeFromQuote($cartCodeRequestTransfer);

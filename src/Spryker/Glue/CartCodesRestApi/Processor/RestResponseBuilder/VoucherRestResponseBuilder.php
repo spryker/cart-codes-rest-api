@@ -26,10 +26,6 @@ class VoucherRestResponseBuilder implements VoucherRestResponseBuilderInterface
      */
     protected $discountMapper;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\CartCodesRestApi\Processor\Mapper\DiscountMapperInterface $discountMapper
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         DiscountMapperInterface $discountMapper
@@ -73,13 +69,6 @@ class VoucherRestResponseBuilder implements VoucherRestResponseBuilderInterface
         return $voucherResources;
     }
 
-    /**
-     * @param string $parentResourceType
-     * @param string $parentResourceId
-     * @param string $voucherCode
-     *
-     * @return string
-     */
     protected function getDiscountsResourceSelfLink(
         string $parentResourceType,
         string $parentResourceId,

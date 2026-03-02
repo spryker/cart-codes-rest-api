@@ -14,17 +14,11 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class CartCodesRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CartCodesRestApi\Zed\CartCodesRestApiStubInterface
-     */
     public function createCartCodesRestApiZedStub(): CartCodesRestApiStubInterface
     {
         return new CartCodesRestApiStub($this->getZedRequestClient());
     }
 
-    /**
-     * @return \Spryker\Client\CartCodesRestApi\Dependency\Client\CartCodesRestApiToZedRequestClientInterface
-     */
     public function getZedRequestClient(): CartCodesRestApiToZedRequestClientInterface
     {
         return $this->getProvidedDependency(CartCodesRestApiDependencyProvider::CLIENT_ZED_REQUEST);

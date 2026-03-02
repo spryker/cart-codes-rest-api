@@ -54,9 +54,6 @@ class CartCodesRestApiFacadeTest extends Unit
      */
     protected $cartCodesRestApiFacade;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -73,9 +70,6 @@ class CartCodesRestApiFacadeTest extends Unit
         $this->cartCodesRestApiFacade->setFactory($mockCartCodesRestApiBusinessFactory);
     }
 
-    /**
-     * @return void
-     */
     public function testAddCartCodeWillAddCodeWithExistingQuote(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class CartCodesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testAddCartCodeWillNotAddCodeWithNonExistentQuote(): void
     {
         // Arrange
@@ -118,9 +109,6 @@ class CartCodesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeWillRemoveDiscountWithExistingQuote(): void
     {
         // Arrange
@@ -137,9 +125,6 @@ class CartCodesRestApiFacadeTest extends Unit
         $this->assertEmpty($cartCodeResponseTransfer->getQuote()->getVoucherDiscounts());
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeWillNotRemoveDiscountWithNonExistentCartCode(): void
     {
         // Arrange
@@ -160,9 +145,6 @@ class CartCodesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeWillNotRemoveDiscountWithNonExistentQuote(): void
     {
         // Arrange
@@ -183,9 +165,6 @@ class CartCodesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeFromQuoteRemovesDiscountCodeWithExistingQuote(): void
     {
         // Arrange
@@ -203,9 +182,6 @@ class CartCodesRestApiFacadeTest extends Unit
         $this->assertEmpty($cartCodeResponseTransfer->getQuote()->getVoucherDiscounts());
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeFromQuoteRemovesGiftCardCodeWithExistingQuote(): void
     {
         // Arrange
@@ -223,9 +199,6 @@ class CartCodesRestApiFacadeTest extends Unit
         $this->assertEmpty($cartCodeResponseTransfer->getQuote()->getGiftCards());
     }
 
-    /**
-     * @return void
-     */
     public function testRemoveCartCodeFromQuoteNotRemovesCodeWithNonExistentQuote(): void
     {
         // Arrange
@@ -246,9 +219,6 @@ class CartCodesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     protected function setPluginCartCodeCollection(): void
     {
         $this->tester->setDependency(CartCodeDependencyProvider::PLUGINS_CART_CODE, [

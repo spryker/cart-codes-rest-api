@@ -21,9 +21,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CartCodesRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CartCodesRestApi\Business\CartCodeAdder\CartCodeAdderInterface
-     */
     public function createCartCodeAdder(): CartCodeAdderInterface
     {
         return new CartCodeAdder(
@@ -32,9 +29,6 @@ class CartCodesRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartCodesRestApi\Business\CartCodeRemover\CartCodeRemoverInterface
-     */
     public function createCartCodeRemover(): CartCodeRemoverInterface
     {
         return new CartCodeRemover(
@@ -43,17 +37,11 @@ class CartCodesRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartCodeFacadeInterface
-     */
     public function getCartCodeFacade(): CartCodesRestApiToCartCodeFacadeInterface
     {
         return $this->getProvidedDependency(CartCodesRestApiDependencyProvider::FACADE_CART_CODE);
     }
 
-    /**
-     * @return \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartsRestApiFacadeInterface
-     */
     public function getCartsRestApiFacade(): CartCodesRestApiToCartsRestApiFacadeInterface
     {
         return $this->getProvidedDependency(CartCodesRestApiDependencyProvider::FACADE_CARTS_REST_API);

@@ -32,9 +32,6 @@ use Spryker\Glue\Kernel\AbstractFactory;
  */
 class CartCodesRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\CartCodeAdder\CartCodeAdderInterface
-     */
     public function createCartCodeAdder(): CartCodeAdderInterface
     {
         return new CartCodeAdder(
@@ -43,9 +40,6 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\CartCodeRemover\CartCodeRemoverInterface
-     */
     public function createCartCodeRemover(): CartCodeRemoverInterface
     {
         return new CartCodeRemover(
@@ -54,9 +48,6 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\RestResponseBuilder\CartCodeRestResponseBuilderInterface
-     */
     public function createCartCodeRestResponseBuilder(): CartCodeRestResponseBuilderInterface
     {
         return new CartCodeRestResponseBuilder(
@@ -66,25 +57,16 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\Mapper\CartCodeMapperInterface
-     */
     public function createCartCodeMapper(): CartCodeMapperInterface
     {
         return new CartCodeMapper($this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\Mapper\DiscountMapperInterface
-     */
     public function createDiscountMapper(): DiscountMapperInterface
     {
         return new DiscountMapper($this->getDiscountMapperPlugins());
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\Expander\VoucherByQuoteResourceRelationshipExpanderInterface
-     */
     public function createVoucherByQuoteResourceRelationshipExpander(): VoucherByQuoteResourceRelationshipExpanderInterface
     {
         return new VoucherByQuoteResourceRelationshipExpander(
@@ -92,9 +74,6 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\RestResponseBuilder\VoucherRestResponseBuilderInterface
-     */
     public function createVoucherRestResponseBuilder(): VoucherRestResponseBuilderInterface
     {
         return new VoucherRestResponseBuilder(
@@ -103,9 +82,6 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Processor\Expander\CartRuleByQuoteResourceRelationshipExpanderInterface
-     */
     public function createCartRuleByQuoteResourceRelationshipExpander(): CartRuleByQuoteResourceRelationshipExpanderInterface
     {
         return new CartRuleByQuoteResourceRelationshipExpander(
@@ -114,9 +90,6 @@ class CartCodesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CartCodesRestApi\Dependency\RestApiResource\CartCodesRestApiToCartsRestApiResourceInterface
-     */
     public function getCartsRestApiResource(): CartCodesRestApiToCartsRestApiResourceInterface
     {
         return $this->getProvidedDependency(CartCodesRestApiDependencyProvider::RESOURCE_CARTS_REST_API);

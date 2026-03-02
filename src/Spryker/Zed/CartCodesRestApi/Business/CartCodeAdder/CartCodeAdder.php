@@ -33,10 +33,6 @@ class CartCodeAdder implements CartCodeAdderInterface
      */
     protected $cartsRestApiFacade;
 
-    /**
-     * @param \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartCodeFacadeInterface $cartCodeFacade
-     * @param \Spryker\Zed\CartCodesRestApi\Dependency\Facade\CartCodesRestApiToCartsRestApiFacadeInterface $cartsRestApiFacade
-     */
     public function __construct(
         CartCodesRestApiToCartCodeFacadeInterface $cartCodeFacade,
         CartCodesRestApiToCartsRestApiFacadeInterface $cartsRestApiFacade
@@ -45,11 +41,6 @@ class CartCodeAdder implements CartCodeAdderInterface
         $this->cartsRestApiFacade = $cartsRestApiFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function addCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         $quoteResponseTransfer = $this->cartsRestApiFacade->findQuoteByUuid($cartCodeRequestTransfer->getQuote());
@@ -72,11 +63,6 @@ class CartCodeAdder implements CartCodeAdderInterface
         return $cartCodeResponseTransfer;
     }
 
-    /**
-     * @param string $errorIdentifier
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     protected function createCartCodeResponseTransferWithErrorMessageTransfer(string $errorIdentifier): CartCodeResponseTransfer
     {
         return (new CartCodeResponseTransfer())
@@ -84,11 +70,6 @@ class CartCodeAdder implements CartCodeAdderInterface
             ->addMessage((new MessageTransfer())->setValue($errorIdentifier));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeResponseTransfer $cartCodeResponseTransfer
-     *
-     * @return bool
-     */
     protected function isSuccessMessageExists(CartCodeResponseTransfer $cartCodeResponseTransfer): bool
     {
         foreach ($cartCodeResponseTransfer->getMessages() as $messageTransfer) {

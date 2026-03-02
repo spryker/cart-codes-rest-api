@@ -18,20 +18,11 @@ class CartCodeMapper implements CartCodeMapperInterface
      */
     protected $cartCodesRestApiConfig;
 
-    /**
-     * @param \Spryker\Glue\CartCodesRestApi\CartCodesRestApiConfig $cartCodesRestApiConfig
-     */
     public function __construct(CartCodesRestApiConfig $cartCodesRestApiConfig)
     {
         $this->cartCodesRestApiConfig = $cartCodesRestApiConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MessageTransfer $messageTransfer
-     * @param \Generated\Shared\Transfer\RestErrorMessageTransfer $restErrorMessageTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer
-     */
     public function mapMessageTransferToRestErrorMessageTransfer(
         MessageTransfer $messageTransfer,
         RestErrorMessageTransfer $restErrorMessageTransfer

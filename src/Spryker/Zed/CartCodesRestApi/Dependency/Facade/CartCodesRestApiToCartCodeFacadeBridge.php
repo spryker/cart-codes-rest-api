@@ -25,21 +25,11 @@ class CartCodesRestApiToCartCodeFacadeBridge implements CartCodesRestApiToCartCo
         $this->cartCodeFacade = $cartCodeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function addCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         return $this->cartCodeFacade->addCartCode($cartCodeRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer
     {
         return $this->cartCodeFacade->removeCartCode($cartCodeRequestTransfer);

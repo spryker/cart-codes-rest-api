@@ -68,9 +68,6 @@ class CartCodesRestApiBusinessTester extends Actor
      */
     public const ID_GIFT_CARD = 3447;
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function prepareQuoteTransfer(): QuoteTransfer
     {
         return (new QuoteBuilder(
@@ -81,9 +78,6 @@ class CartCodesRestApiBusinessTester extends Actor
         ))->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransferWithVouchers(): QuoteTransfer
     {
         return (new QuoteBuilder([QuoteTransfer::UUID => static::TEST_QUOTE_UUID]))
@@ -103,9 +97,6 @@ class CartCodesRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransferWithGiftCard(): QuoteTransfer
     {
         return (new QuoteBuilder([QuoteTransfer::UUID => static::TEST_QUOTE_UUID]))
@@ -125,9 +116,6 @@ class CartCodesRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function havePersistentQuoteWithVouchers(): QuoteTransfer
     {
         $customerTransfer = $this->haveCustomer();
@@ -149,9 +137,6 @@ class CartCodesRestApiBusinessTester extends Actor
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function havePersistentQuoteWithoutVouchers(): QuoteTransfer
     {
         return $this->havePersistentQuote(

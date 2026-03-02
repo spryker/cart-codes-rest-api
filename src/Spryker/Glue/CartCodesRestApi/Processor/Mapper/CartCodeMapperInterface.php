@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestErrorMessageTransfer;
 
 interface CartCodeMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MessageTransfer $messageTransfer
-     * @param \Generated\Shared\Transfer\RestErrorMessageTransfer $restErrorMessageTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer
-     */
     public function mapMessageTransferToRestErrorMessageTransfer(
         MessageTransfer $messageTransfer,
         RestErrorMessageTransfer $restErrorMessageTransfer

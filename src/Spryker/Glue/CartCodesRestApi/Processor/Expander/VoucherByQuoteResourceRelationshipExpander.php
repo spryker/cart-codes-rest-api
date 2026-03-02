@@ -19,9 +19,6 @@ class VoucherByQuoteResourceRelationshipExpander implements VoucherByQuoteResour
      */
     protected $voucherRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\CartCodesRestApi\Processor\RestResponseBuilder\VoucherRestResponseBuilderInterface $voucherRestResponseBuilder
-     */
     public function __construct(VoucherRestResponseBuilderInterface $voucherRestResponseBuilder)
     {
         $this->voucherRestResponseBuilder = $voucherRestResponseBuilder;

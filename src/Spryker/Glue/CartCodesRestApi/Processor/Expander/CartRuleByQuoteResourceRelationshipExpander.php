@@ -28,10 +28,6 @@ class CartRuleByQuoteResourceRelationshipExpander implements CartRuleByQuoteReso
      */
     protected $discountMapper;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\CartCodesRestApi\Processor\Mapper\DiscountMapperInterface $discountMapper
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         DiscountMapperInterface $discountMapper

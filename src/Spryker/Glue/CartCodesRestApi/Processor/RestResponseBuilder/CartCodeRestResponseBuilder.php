@@ -33,11 +33,6 @@ class CartCodeRestResponseBuilder implements CartCodeRestResponseBuilderInterfac
      */
     protected $cartsRestApiResource;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\CartCodesRestApi\Processor\Mapper\CartCodeMapperInterface $cartCodeMapper
-     * @param \Spryker\Glue\CartCodesRestApi\Dependency\RestApiResource\CartCodesRestApiToCartsRestApiResourceInterface $cartsRestApiResource
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         CartCodeMapperInterface $cartCodeMapper,
@@ -48,12 +43,6 @@ class CartCodeRestResponseBuilder implements CartCodeRestResponseBuilderInterfac
         $this->cartsRestApiResource = $cartsRestApiResource;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeResponseTransfer $cartCodeResponseTransfer
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createCartRestResponse(
         CartCodeResponseTransfer $cartCodeResponseTransfer,
         RestRequestInterface $restRequest
@@ -66,12 +55,6 @@ class CartCodeRestResponseBuilder implements CartCodeRestResponseBuilderInterfac
         return $this->cartsRestApiResource->createCartRestResponse($quoteTransfer, $restRequest);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeResponseTransfer $cartCodeResponseTransfer
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createGuestCartRestResponse(
         CartCodeResponseTransfer $cartCodeResponseTransfer,
         RestRequestInterface $restRequest

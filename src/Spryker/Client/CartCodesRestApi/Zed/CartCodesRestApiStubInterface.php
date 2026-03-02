@@ -12,24 +12,9 @@ use Generated\Shared\Transfer\CartCodeResponseTransfer;
 
 interface CartCodesRestApiStubInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function addCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCode(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CartCodeRequestTransfer $cartCodeRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartCodeResponseTransfer
-     */
     public function removeCartCodeFromQuote(CartCodeRequestTransfer $cartCodeRequestTransfer): CartCodeResponseTransfer;
 }
