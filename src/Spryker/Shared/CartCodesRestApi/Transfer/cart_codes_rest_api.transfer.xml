@@ -38,6 +38,20 @@
         <property name="voucherDiscounts" type="Discount[]" singular="voucherDiscount" description="A collection of discounts applied from voucher codes."/>
         <property name="cartRuleDiscounts" type="Discount[]" singular="cartRuleDiscount" description="A collection of discounts applied based on cart-level rules."/>
         <property name="promotionItems" type="PromotionItem[]" singular="promotionItem" description="A collection of items that are part of a promotion."/>
+        <property name="giftCards" type="GiftCard[]" singular="giftCard" description="A collection of gift cards."/>
+        <property name="items" type="Item[]" singular="item" description="A collection of items, typically in a cart, order, or list."/>
+    </transfer>
+
+    <transfer name="GiftCard">
+    </transfer>
+
+    <transfer name="Item">
+    </transfer>
+
+    <transfer name="DiscountPromotion">
+    </transfer>
+
+    <transfer name="RestCartsAttributes">
     </transfer>
 
     <transfer name="RestUser">
@@ -55,6 +69,10 @@
         <property name="voucherCode" type="string" description="The code for a voucher used to apply a discount."/>
         <property name="discountType" type="string" description="The type of discount (e.g., cart rule, voucher)."/>
         <property name="validTo" type="string" description="The date and time until which an entity is valid."/>
+        <property name="amount" type="int" description="A numerical value, often used for price, quantity, or discount."/>
+        <property name="displayName" type="string" description="A display name for an entity."/>
+        <property name="isExclusive" type="string" description="A flag indicating if a discount is exclusive."/>
+        <property name="discountPromotion" type="DiscountPromotion" description="A promotion that provides a discount."/>
     </transfer>
 
     <transfer name="Message">

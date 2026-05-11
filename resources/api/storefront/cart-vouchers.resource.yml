@@ -1,0 +1,43 @@
+resource:
+    name: CartVouchers
+    shortName: vouchers
+    description: 'Manage voucher codes on authenticated customer carts'
+
+    processor: Spryker\Glue\CartCodesRestApi\Api\Storefront\Processor\CartVouchersStorefrontProcessor
+
+    security: "is_granted('ROLE_CUSTOMER')"
+
+    operations:
+        - type: Post
+          uriTemplate: '/carts/{cartId}/vouchers'
+          uriVariables:
+              cartId:
+                  toProperty: 'cart'
+                  fromClass: CartsStorefrontResource
+
+        - type: Delete
+          uriTemplate: '/carts/{cartId}/vouchers/{code}'
+          read: false
+          output: false
+          uriVariables:
+              cartId:
+                  identifiers: [cartId]
+              code:
+                  identifiers: [code]
+
+    properties:
+        code:
+            type: string
+            identifier: true
+            writable: true
+            readable: true
+            required: true
+            description: 'Voucher code to apply to the cart'
+            openapiContext:
+                example: 'HAPPY2024'
+
+        cart:
+            type: CartsStorefrontResource
+            writable: false
+            readable: false
+            required: false

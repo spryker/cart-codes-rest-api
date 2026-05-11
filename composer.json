@@ -16,6 +16,7 @@
         "spryker/zed-request": "^3.0.0"
     },
     "require-dev": {
+        "spryker/api-platform": "^1.0.0",
         "spryker/code-sniffer": "*",
         "spryker/container": "*",
         "spryker/customer": "*",
@@ -24,6 +25,9 @@
         "spryker/quote": "*",
         "spryker/store": "*",
         "spryker/testify": "*"
+    },
+    "suggest": {
+        "spryker/api-platform": "If you want to expose CartCodesRestApi resources through the API Platform stack."
     },
     "autoload": {
         "psr-4": {

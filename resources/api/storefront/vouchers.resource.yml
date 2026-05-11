@@ -1,0 +1,87 @@
+resource:
+    name: Vouchers
+    shortName: vouchers
+    description: 'Voucher discounts applied to a cart'
+
+    paginationEnabled: false
+
+    includableIn:
+        - resource: Carts
+          relationshipName: vouchers
+        - resource: GuestCarts
+          relationshipName: vouchers
+
+    properties:
+        idDiscount:
+            type: integer
+            writable: false
+            readable: true
+            required: false
+            description: 'Unique identifier of the discount'
+
+        code:
+            type: string
+            identifier: true
+            writable: false
+            readable: true
+            required: false
+            description: 'Discount voucher code'
+            openapiContext:
+                example: 'HAPPY2024'
+
+        amount:
+            type: integer
+            writable: false
+            readable: true
+            required: false
+            description: 'Discount amount in cents'
+
+        discountType:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Type of discount (e.g., voucher)'
+            openapiContext:
+                example: 'voucher'
+
+        displayName:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Human-readable discount name'
+            openapiContext:
+                example: '5% discount on all products'
+
+        isExclusive:
+            type: boolean
+            writable: false
+            readable: true
+            required: false
+            description: 'Whether the discount is exclusive'
+
+        expirationDateTime:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Discount expiration date and time'
+            openapiContext:
+                example: '2025-02-01 00:00:00.000000'
+
+        discountPromotionAbstractSku:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Abstract SKU of promotional product'
+            openapiContext:
+                example: '001'
+
+        discountPromotionQuantity:
+            type: integer
+            writable: false
+            readable: true
+            required: false
+            description: 'Quantity of promotional product'

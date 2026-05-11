@@ -1,0 +1,41 @@
+resource:
+    name: GuestCartVouchers
+    shortName: vouchers
+    description: 'Manage voucher codes on guest carts'
+
+    processor: Spryker\Glue\CartCodesRestApi\Api\Storefront\Processor\GuestCartVouchersStorefrontProcessor
+
+    operations:
+        - type: Post
+          uriTemplate: '/guest-carts/{guestCartId}/vouchers'
+          uriVariables:
+              guestCartId:
+                  toProperty: 'guestCart'
+                  fromClass: GuestCartsStorefrontResource
+
+        - type: Delete
+          uriTemplate: '/guest-carts/{guestCartId}/vouchers/{code}'
+          read: false
+          output: false
+          uriVariables:
+              guestCartId:
+                  identifiers: [guestCartId]
+              code:
+                  identifiers: [code]
+
+    properties:
+        code:
+            type: string
+            identifier: true
+            writable: true
+            readable: true
+            required: true
+            description: 'Voucher code to apply to the guest cart'
+            openapiContext:
+                example: 'HAPPY2024'
+
+        guestCart:
+            type: GuestCartsStorefrontResource
+            writable: false
+            readable: false
+            required: false
