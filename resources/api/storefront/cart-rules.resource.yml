@@ -5,12 +5,6 @@ resource:
 
     paginationEnabled: false
 
-    includableIn:
-        - resource: Carts
-          relationshipName: cart-rules
-        - resource: GuestCarts
-          relationshipName: cart-rules
-
     properties:
         idDiscount:
             type: integer
