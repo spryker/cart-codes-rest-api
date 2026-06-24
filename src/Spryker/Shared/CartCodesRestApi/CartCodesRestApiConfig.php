@@ -12,6 +12,8 @@ use Spryker\Shared\Kernel\AbstractBundleConfig;
 class CartCodesRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @uses \Spryker\Shared\CartsRestApi\CartsRestApiConfig::ERROR_IDENTIFIER_CART_NOT_FOUND
      *
      * @var string
@@ -19,16 +21,22 @@ class CartCodesRestApiConfig extends AbstractBundleConfig
     public const ERROR_IDENTIFIER_CART_NOT_FOUND = 'ERROR_IDENTIFIER_CART_NOT_FOUND';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const ERROR_IDENTIFIER_CART_CODE_NOT_FOUND = 'ERROR_IDENTIFIER_CART_CODE_NOT_FOUND';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const ERROR_IDENTIFIER_CART_CODE_CANNOT_BE_REMOVED = 'ERROR_IDENTIFIER_CART_CODE_CANNOT_BE_REMOVED';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const ERROR_IDENTIFIER_CART_CODE_CANT_BE_ADDED = 'ERROR_IDENTIFIER_CART_CODE_CANT_BE_ADDED';

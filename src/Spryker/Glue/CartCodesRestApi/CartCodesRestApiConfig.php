@@ -15,21 +15,29 @@ use Symfony\Component\HttpFoundation\Response;
 class CartCodesRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_VOUCHERS = 'vouchers';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_CART_RULES = 'cart-rules';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_CART_CODES = 'cart-codes';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\CartsRestApi\CartsRestApiConfig::RESOURCE_CARTS
      *
      * @var string
@@ -37,6 +45,8 @@ class CartCodesRestApiConfig extends AbstractBundleConfig
     public const RESOURCE_CARTS = 'carts';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\CartsRestApi\CartsRestApiConfig::RESOURCE_GUEST_CARTS
      *
      * @var string
@@ -44,6 +54,8 @@ class CartCodesRestApiConfig extends AbstractBundleConfig
     public const RESOURCE_GUEST_CARTS = 'guest-carts';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\CartsRestApi\CartsRestApiConfig::RESPONSE_CODE_CART_NOT_FOUND
      *
      * @var string
@@ -51,21 +63,29 @@ class CartCodesRestApiConfig extends AbstractBundleConfig
     public const RESPONSE_CODE_CART_NOT_FOUND = '101';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_CART_CODE_NOT_FOUND = '3301';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_CART_CODE_CANT_BE_ADDED = '3302';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_CART_CODE_CANNOT_BE_REMOVED = '3303';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\CartsRestApi\CartsRestApiConfig::EXCEPTION_MESSAGE_CART_WITH_ID_NOT_FOUND
      *
      * @var string
@@ -73,16 +93,22 @@ class CartCodesRestApiConfig extends AbstractBundleConfig
     public const EXCEPTION_MESSAGE_CART_WITH_ID_NOT_FOUND = 'Cart with given uuid not found.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const EXCEPTION_MESSAGE_CART_CODE_NOT_FOUND = 'Cart code not found in cart.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const EXCEPTION_MESSAGE_CART_CODE_CANT_BE_ADDED = 'Cart code can\'t be added.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const EXCEPTION_MESSAGE_CART_CODE_CANNOT_BE_REMOVED = 'Cart code can\'t be removed.';
