@@ -12,6 +12,16 @@ resource:
               guestCartId:
                   toProperty: 'guestCart'
                   fromClass: GuestCartsStorefrontResource
+          openapiContext:
+              responses:
+                  201:
+                      description: 'Code applied; the updated guest cart is returned.'
+                  400:
+                      description: 'Anonymous customer unique id header is missing (code 109).'
+                  404:
+                      description: 'Guest cart not found (code 101).'
+                  422:
+                      description: 'Code is blank, or the code cannot be applied to the guest cart (code 3302).'
 
         - type: Delete
           uriTemplate: '/guest-carts/{guestCartId}/cart-codes/{code}'
@@ -22,6 +32,14 @@ resource:
                   identifiers: [code]
           read: false
           output: false
+          openapiContext:
+              responses:
+                  204:
+                      description: 'Code removed from the guest cart.'
+                  400:
+                      description: 'Anonymous customer unique id header is missing (code 109).'
+                  404:
+                      description: 'Guest cart not found (code 101).'
 
     properties:
         code:

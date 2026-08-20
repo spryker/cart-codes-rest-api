@@ -14,6 +14,18 @@ resource:
               cartId:
                   toProperty: 'cart'
                   fromClass: CartsStorefrontResource
+          openapiContext:
+              responses:
+                  201:
+                      description: 'Voucher applied; the updated cart is returned.'
+                  401:
+                      description: 'Invalid access token.'
+                  403:
+                      description: 'Missing access token.'
+                  404:
+                      description: 'Cart not found (code 101).'
+                  422:
+                      description: 'Voucher code is blank, or the code cannot be applied to the cart (code 3302).'
 
         - type: Delete
           uriTemplate: '/carts/{cartId}/vouchers/{code}'
@@ -24,6 +36,16 @@ resource:
                   identifiers: [cartId]
               code:
                   identifiers: [code]
+          openapiContext:
+              responses:
+                  204:
+                      description: 'Voucher removed from the cart.'
+                  401:
+                      description: 'Invalid access token.'
+                  403:
+                      description: 'Missing access token.'
+                  404:
+                      description: 'Cart not found (code 101).'
 
     properties:
         code:
