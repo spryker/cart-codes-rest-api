@@ -28,6 +28,9 @@ resource:
                       description: 'Voucher code is blank, or the code cannot be applied to the cart (code 3302).'
 
         - type: Delete
+          extraProperties:
+              notFoundCode: '101'
+              notFoundMessage: 'Cart with given uuid not found.'
           uriTemplate: '/carts/{cartId}/vouchers/{code}'
           read: false
           output: false
