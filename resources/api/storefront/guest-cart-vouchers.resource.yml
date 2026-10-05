@@ -21,7 +21,12 @@ resource:
                   404:
                       description: 'Guest cart not found (code 101).'
                   422:
-                      description: 'Voucher code is blank, or the code cannot be applied to the guest cart (code 3302).'
+                      description: 'Voucher code is blank, unknown, or not applicable to the guest cart items (code 3302).'
+                      codes:
+                          - code: '3302'
+                            description: 'The voucher code cannot be applied to the guest cart.'
+                          - code: '901'
+                            description: 'Request validation failed.'
 
         - type: Delete
           uriTemplate: '/guest-carts/{guestCartId}/vouchers/{code}'
@@ -40,6 +45,13 @@ resource:
                       description: 'Anonymous customer unique id header is missing (code 109).'
                   404:
                       description: 'Guest cart not found (code 101).'
+                  422:
+                      description: 'Voucher code is not applied to the guest cart (code 3301), or it cannot be removed, for example because the guest cart is locked (code 3303).'
+                      codes:
+                          - code: '3301'
+                            description: 'The voucher code is not applied to the guest cart.'
+                          - code: '3303'
+                            description: 'The voucher code cannot be removed from the guest cart.'
 
     properties:
         code:

@@ -25,7 +25,7 @@ resource:
                   404:
                       description: 'Cart not found (code 101).'
                   422:
-                      description: 'Code is blank, or the code cannot be applied to the cart (code 3302).'
+                      description: 'Code is blank, unknown, or not applicable to the cart items (code 3302).'
 
         - type: Delete
           extraProperties:
@@ -49,6 +49,11 @@ resource:
                       description: 'Missing access token.'
                   404:
                       description: 'Cart not found (code 101).'
+                  422:
+                      description: 'The code cannot be removed from the cart, for example because the cart is locked (code 3303).'
+                      codes:
+                          - code: '3303'
+                            description: 'The code cannot be removed from the cart.'
 
     properties:
         code:

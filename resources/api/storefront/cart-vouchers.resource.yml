@@ -25,7 +25,12 @@ resource:
                   404:
                       description: 'Cart not found (code 101).'
                   422:
-                      description: 'Voucher code is blank, or the code cannot be applied to the cart (code 3302).'
+                      description: 'Voucher code is blank, unknown, or not applicable to the cart items (code 3302).'
+                      codes:
+                          - code: '3302'
+                            description: 'The voucher code cannot be applied to the cart.'
+                          - code: '901'
+                            description: 'Request validation failed.'
 
         - type: Delete
           extraProperties:
@@ -49,6 +54,13 @@ resource:
                       description: 'Missing access token.'
                   404:
                       description: 'Cart not found (code 101).'
+                  422:
+                      description: 'Voucher code is not applied to the cart (code 3301), or it cannot be removed, for example because the cart is locked (code 3303).'
+                      codes:
+                          - code: '3301'
+                            description: 'The voucher code is not applied to the cart.'
+                          - code: '3303'
+                            description: 'The voucher code cannot be removed from the cart.'
 
     properties:
         code:
